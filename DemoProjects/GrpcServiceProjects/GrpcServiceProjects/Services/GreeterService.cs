@@ -22,5 +22,10 @@ namespace GrpcServiceProjects
                 Message = "Hello " + request.Name
             });
         }
+
+
+
+
+
     }
 }

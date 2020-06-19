@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceProjects.Services";
+
+package greet;
+
+
+
+// The greeting service definition.
+service Calculs {
+  // Sends a greeting
+
+  rpc Add (ParamsIn) returns (ResultOut);
+  rpc Substract (ParamsIn) returns (ResultOut);
+  rpc Multiply (ParamsIn) returns (ResultOut);
+  rpc Divide (ParamsIn) returns (ResultOut);
+
+}
+
+
+// The request message containing the user's name.
+message ParamsIn {
+  double num = 1;
+   double denum = 2;
+}
+
+// The response message containing the greetings.
+message ResultOut {
+  double result = 1;
+}
