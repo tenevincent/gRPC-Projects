@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\average.proto" />
     <None Remove="Protos\calculator.proto" />
+    <None Remove="Protos\max.proto" />
+    <None Remove="Protos\prime.proto" />
   </ItemGroup>
 
   <ItemGroup>      
+    <Protobuf Include="Protos\average.proto" />      
     <Protobuf Include="Protos\calculator.proto" />      
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />      
+    <Protobuf Include="Protos\max.proto" />      
+    <Protobuf Include="Protos\prime.proto" />
   </ItemGroup>
  
   

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.9.1" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.23.2" />
+    <PackageReference Include="Grpc.Tools" Version="2.23.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\GrpcServiceProjects.Advanced\Protos\sqrt.proto" GrpcServices="Client">
+      <Link>Protos\sqrt.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects\Protos\average.proto" GrpcServices="Client">
+      <Link>Protos\average.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects\Protos\calculator.proto" GrpcServices="Client">
+      <Link>Protos\calculator.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects\Protos\greet.proto" GrpcServices="Client">
+      <Link>Protos\greet.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects\Protos\max.proto" GrpcServices="Client">
+      <Link>Protos\max.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects\Protos\prime.proto" GrpcServices="Client">
+      <Link>Protos\prime.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+</Project>

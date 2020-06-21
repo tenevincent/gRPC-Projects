@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceProjects.Advanced.Services";
+
+
+package sqrt;
+
+message SqrtRequest {
+	int32 number = 1;
+}
+
+message SqrtReponse {
+	double square_root = 1;
+}
+
+service SqrtService {
+	rpc Sqrt (SqrtRequest) returns (SqrtReponse) {}
+}

@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\GrpcServiceProjects\Protos\calculator.proto" GrpcServices="Client">
-      <Link>Protos\calculator.proto</Link>
-    </Protobuf>
-    <Protobuf Include="..\GrpcServiceProjects\Protos\greet.proto" GrpcServices="Client">
+    <Protobuf Include="..\GrpcServiceProjects.Advanced\Protos\greet.proto" GrpcServices="Client">
       <Link>Protos\greet.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\GrpcServiceProjects.Advanced\Protos\sqrt.proto" GrpcServices="Client">
+      <Link>Protos\sqrt.proto</Link>
     </Protobuf>
   </ItemGroup>
 

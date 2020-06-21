@@ -9,10 +9,16 @@ service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply){}
 
-  //  rpc Add (ParamsIn) returns (ResultOut);
-  // rpc Substract (ParamsIn) returns (ResultOut);
-  // rpc Multiply (ParamsIn) returns (ResultOut);
-  // rpc Divide (ParamsIn) returns (ResultOut);
+  	// Server streaming
+	rpc GreetManyTimes (GreetManyTimesRequest) returns (stream GreetManyTimesResponse) {}
+
+
+
+	// Client streaming
+	rpc LongGreet (stream LongGreetRequest) returns (LongGreetResponse) {}
+
+	// Bidirectional streaming
+	rpc GreetEveryone (stream GreetEveryoneRequest) returns (stream GreetEveryoneResponse) {}
 
 }
 
@@ -26,5 +32,34 @@ message HelloReply {
   string message = 1;
 }
 
+message GreetManyTimesRequest {
+	Greeting greeting = 1;
+}
+
+message GreetManyTimesResponse {
+	string result = 1;
+}
 
 
+message Greeting {
+	string first_name = 1;
+	string last_name = 2;
+}
+
+
+
+message LongGreetRequest {
+	Greeting greeting = 1;
+}
+
+message LongGreetResponse {
+	string result = 1;
+}
+
+message GreetEveryoneRequest {
+	Greeting greeting = 1;
+}
+
+message GreetEveryoneResponse {
+	string result = 1;
+}

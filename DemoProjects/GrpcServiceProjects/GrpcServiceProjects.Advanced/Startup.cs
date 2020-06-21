@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GrpcServiceProjects.Services;
+using GrpcServiceProjects.Advanced.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace GrpcServiceProjects
+namespace GrpcServiceProjects.Advanced
 {
     public class Startup
     {
@@ -33,10 +33,7 @@ namespace GrpcServiceProjects
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>();
-                endpoints.MapGrpcService<CalculatorService>();
-                endpoints.MapGrpcService<PrimeNumberService>();
-                endpoints.MapGrpcService<AverageService>();
-                endpoints.MapGrpcService<FindMaxService>();
+                endpoints.MapGrpcService<SqrtServiceImpl>();
                 
 
                 endpoints.MapGet("/", async context =>
