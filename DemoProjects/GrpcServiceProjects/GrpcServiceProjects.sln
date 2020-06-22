@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceProjects.Basis",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient.Basis", "ConsoleClientApp\ConsoleClient.Basis.csproj", "{BECC24BA-8681-46E5-9403-4961017575A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceProjects.Advanced", "GrpcServiceProjects.Advanced\GrpcServiceProjects.Advanced.csproj", "{5F759323-0E06-4BA1-ABA6-F5AA8B36AEB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceProjects.Advanced", "GrpcServiceProjects.Advanced\GrpcServiceProjects.Advanced.csproj", "{5F759323-0E06-4BA1-ABA6-F5AA8B36AEB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient.Advanced", "ConsoleClient.Advanced\ConsoleClient.Advanced.csproj", "{C8892CBA-7248-4B7B-A203-F61D72C90EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient.Advanced", "ConsoleClient.Advanced\ConsoleClient.Advanced.csproj", "{C8892CBA-7248-4B7B-A203-F61D72C90EE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceProjectsMongoDbServer", "GrpcServiceProjects.MongoDb\GrpcServiceProjectsMongoDbServer.csproj", "{5F8F0E5F-6898-450F-A459-6102420E8A22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceProjectsMongoDb.ClientApp", "GrpcServiceProjectsMongoDb.ClientApp\GrpcServiceProjectsMongoDb.ClientApp.csproj", "{D1F38780-1AC2-46E3-A401-F4ED168CA2A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{C8892CBA-7248-4B7B-A203-F61D72C90EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8892CBA-7248-4B7B-A203-F61D72C90EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8892CBA-7248-4B7B-A203-F61D72C90EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8F0E5F-6898-450F-A459-6102420E8A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8F0E5F-6898-450F-A459-6102420E8A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8F0E5F-6898-450F-A459-6102420E8A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8F0E5F-6898-450F-A459-6102420E8A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F38780-1AC2-46E3-A401-F4ED168CA2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F38780-1AC2-46E3-A401-F4ED168CA2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F38780-1AC2-46E3-A401-F4ED168CA2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F38780-1AC2-46E3-A401-F4ED168CA2A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
