@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDataStreaming.Server.Services";
+ 
+ 
+ service StreamingService {
+    rpc UploadPersonImage (stream PersonImageMessage) returns (TransferStatusMessage);
+    rpc DownloadPersonImage (PersonMessage) returns (stream PersonImageMessage);
+}
+
+
+ 
+
+enum ImageType {
+	IMAGETYPE_UNDEFINED = 0;
+	IMAGETYPE_JPG = 1;
+	IMAGETYPE_PNG = 2;
+}
+
+enum TransferStatus{
+    TRANSFERSTATUS_UNDEFINED = 0;
+    TRANSFERSTATUS_SUCCESS = 1;
+    TRANSFERSTATUS_FAILURE = 2;
+    TRANSFERSTATUS_INVALID = 3;
+    TRANSFERSTATUS_CANCELLED = 4; 
+}
+
+
+message TransferStatusMessage {
+    string message = 1;
+    TransferStatus status = 2;
+}
+
+
+message PersonImageMessage
+{
+  int32 personId = 1;
+  TransferStatusMessage transferStatusMessage = 2;
+  ImageType imageType = 3;
+  bytes imageChunk = 4;
+  string fileName = 5;
+}
+
+message PersonMessage
+{
+	int32 personId = 1;
+     string fileName = 2;
+}
