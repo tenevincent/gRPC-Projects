@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Infrastructure.Api";
+
+package thing;
+
+// The greeting service definition.
+service Things {
+    rpc Get(GetThingRequest) returns (GetThingResponse);
+}
+// The request message containing the user's name.
+message GetThingRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message GetThingResponse {
+  string message = 1;
+}

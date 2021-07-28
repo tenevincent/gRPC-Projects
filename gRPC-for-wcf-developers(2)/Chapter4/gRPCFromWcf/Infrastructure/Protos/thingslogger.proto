@@ -1,0 +1,26 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+
+option csharp_namespace = "Infrastructure.Api";
+
+package thingLogger;
+
+// The greeting service definition.
+service ThingLogger {
+  rpc OpenConnection(stream ThingLogRequest) returns (ConnectionClosedResponse);
+}
+
+
+// The request message containing the user's name.
+message ThingLogRequest {
+  string Description = 1;
+  google.protobuf.Timestamp Time = 2;
+
+}
+
+// The response message containing the greetings.
+message ConnectionClosedResponse {
+  string message = 1;
+
+}

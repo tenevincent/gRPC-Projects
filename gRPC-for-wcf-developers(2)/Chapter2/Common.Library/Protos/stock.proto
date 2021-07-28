@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+
+option csharp_namespace = "TraderSys";
+
+message Stock {
+
+    int32 id = 1;
+    string symbol = 2;
+    string display_name = 3;
+    int32 market_id = 4;
+}  
+
+
+
+
+message Meeting {
+
+    string subject = 1;
+    google.protobuf.Timestamp time = 2;
+    google.protobuf.Duration duration = 3;
+}
+
+
+message Outer {
+    message Inner {
+        string text = 1;
+    }
+    Inner inner = 1;
+}
+
+message Person {
+    // Other fields elided
+    repeated string aliases = 8;
+}
+
+
+message Currency {
+    // Currency-specific data
+}
+
+message ChangeNotification {
+    int32 id = 1;
+    google.protobuf.Any instrument = 2;
+}
+
+enum AccountStatus {
+  ACCOUNT_STATUS_UNKNOWN = 0;
+  ACCOUNT_STATUS_PENDING = 1;
+  ACCOUNT_STATUS_ACTIVE = 2;
+  ACCOUNT_STATUS_SUSPENDED = 3;
+  ACCOUNT_STATUS_CLOSED = 4;
+}
+
+message StockPrices {
+    map<string, double> prices = 1;
+}
+
+message Order {
+    message Attributes {
+        map<string, string> values = 1;
+    }
+    repeated Attributes attributes = 1;
+}
+
+

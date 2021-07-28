@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Infrastructure.Api";
+
+package thing;
+
+// The greeting service definition.
+service ClockStreamer {
+    rpc Subscribe(ClockSubscribeRequest) returns (stream ClockMessageResponse);
+}
+// The request message containing the user's name.
+message ClockSubscribeRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ClockMessageResponse {
+  string message = 1;
+}

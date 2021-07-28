@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Infrastructure.Api";
+
+package chatter;
+
+// The greeting service definition.
+service Chatter {
+    rpc Connect(stream IncomingMessage) returns (stream OutgoingMessage);
+}
+
+
+// The request message containing the user's name.
+message IncomingMessage {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message OutgoingMessage {
+  string message = 1;
+}
