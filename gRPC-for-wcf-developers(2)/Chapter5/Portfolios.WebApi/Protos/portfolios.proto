@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "TraderSys.Portfolios";
+
+package PortfolioServer;
+
+// The greeting service definition.
+service Portfolios {
+	rpc Get(GetRequest) returns (GetResponse);
+
+	rpc GetAll(GetAllRequest) returns (GetAllResponse);
+
+
+ }
+
+message GetRequest {
+	string trader_id = 1;
+	int32 portfolio_id = 2;
+}
+message GetResponse {
+	Portfolio portfolio = 1;
+}
+
+message GetAllRequest {
+string trader_id = 1;
+}
+message GetAllResponse {
+repeated Portfolio portfolios = 1;
+}
+
+
+message PortfolioItem {
+	int32 id = 1;
+	int32 share_id = 2;
+	int32 holding = 3;
+	// int32 cost_cents = 4;
+	   double cost = 4;
+}
+
+message Portfolio {
+	int32 id = 1;
+	string trader_id = 2;
+	repeated PortfolioItem items = 3;
+}
+
+
+ 
