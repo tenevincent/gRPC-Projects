@@ -202,10 +202,7 @@ namespace ConsoleClientApp
             var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
             Console.WriteLine("Greeting: " + reply.Message);
             Console.WriteLine("Press any key to exit...");
-
-
-
-
+             
         }
 
 
