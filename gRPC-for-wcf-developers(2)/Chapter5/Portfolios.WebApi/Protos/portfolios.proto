@@ -42,6 +42,3 @@ message Portfolio {
 	string trader_id = 2;
 	repeated PortfolioItem items = 3;
 }
-
-
- 

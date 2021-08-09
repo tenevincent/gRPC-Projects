@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TraderSys.Portfolios.Repositories;
-using TraderSys.Portfolios.Services;
+using TraderSys.SimpleStockTickerServer.Services;
 using TraderSys.StockMarket;
 
-namespace TraderSys.Portfolios
+namespace TraderSys.SimpleStockTickerServer
 {
     public class Startup
     {
@@ -19,13 +18,8 @@ namespace TraderSys.Portfolios
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPortfolioRepository, PortfolioRepository>();
-            services.AddSingleton<IStockPriceSubscriberFactory, StockPriceSubscriberFactory>();
-            services.AddSingleton<IFullStockPriceSubscriberFactory, FullStockPriceSubscriberFactory>();
-
-            
             services.AddGrpc();
-         
+            services.AddSingleton<IStockPriceSubscriberFactory, StockPriceSubscriberFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +34,7 @@ namespace TraderSys.Portfolios
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<PortfolioService>();
                 endpoints.MapGrpcService<StockTickerService>();
-                endpoints.MapGrpcService<FullStockTickerService>();
-
-                
 
                 endpoints.MapGet("/", async context =>
                 {
